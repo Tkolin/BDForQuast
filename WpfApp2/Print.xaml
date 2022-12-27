@@ -1,0 +1,34 @@
+﻿<Page x:Class="WpfApp2.Print"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp2"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="480"
+      Title="Print">
+
+    <Grid Background="White">
+        <StackPanel Margin="10">
+        <TextBlock Margin="10" FontSize="20" Text="Данные за период: " x:Name="dataLable" 
+                   HorizontalAlignment="Center"/>
+        <DataGrid Height="600" AutoGenerateColumns="False" ColumnWidth="*"  Name="grid"  
+                  ItemsSource="{Binding}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID}" />
+                    <DataGridTextColumn Header="UserID" Binding="{Binding UserID}" />
+                    <DataGridTextColumn Header="ServiceID" Binding="{Binding ServiceID}"/>
+                    <DataGridTextColumn Header="StatusID" Binding="{Binding StatusID}"/>
+                    <DataGridTextColumn Header="Date payment" Binding="{Binding DatePayment}"/>
+                    <DataGridTextColumn Header="Date completion" Binding="{Binding DateCompletion}"/>
+                    <DataGridTextColumn Header="Price" Binding="{Binding Price}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Orientation="Horizontal" x:Name="btns">
+                <Button Content="Назад"  Click="Button_Click" Visibility="Visible"/>
+                <Button Content="Печать"   Click="Button_Click_1" Visibility="Visible"/>
+            </StackPanel>
+
+        </StackPanel>
+    </Grid>
+</Page>
